@@ -1,0 +1,7 @@
+- this codebase is an html-based editor for some kind of documents .
+- possibly html , md , json , xml , txt as document types .
+- save and load them from html5 storage , distinguishing them by (unique) name .
+- provide an editor UI with semantic coloring and semantic decorations .
+- provide a document-preview mode for eye-ball feedback , besides semantic feedbacks .
+- keep room for a back-end especially for file-system persistance and or db persistance .
+- the back-end may be in PHP , or other b.e. added later .
