@@ -4,6 +4,10 @@ An HTML-based document editor with semantic coloring, semantic decorations, and
 a document-preview mode. Save/load documents from HTML5 storage, distinguished
 by a unique name.
 
+## Live
+
+Try it on GitHub Pages: <https://arkenidar.github.io/docum/>
+
 ## Document types
 
 - `txt`
@@ -75,3 +79,15 @@ Documents are stored as JSON files under `api/data/`. Endpoints:
 - **xml** — tags, attributes, strings, comments, CDATA, doctype; well-formedness via `DOMParser`.
 - **html** — same tokens as XML; basic tag-balance checking (void elements aware).
 - **md** — headings, bold/italic, inline & fenced code, links, blockquote, list markers; heading outline.
+
+## Roadmap
+
+Planned next steps:
+
+- **Wire the backend** — add a backend toggle in the UI and adapt `app.js` to async so the PHP filesystem backend (`api/*.php`) can be selected as the persistence target.
+- **Richer storage** — an IndexedDB backend for larger documents, using the same backend contract.
+- **Fuller markdown** — tables, nested lists, task lists, strikethrough, and reference-style links in both highlighting and preview.
+- **More document types** — e.g. `yaml`, `css`, `js`.
+- **Editor ergonomics** — undo/redo history, find/replace, bracket matching, and a line-wrap toggle.
+- **Deeper decorations** — inline error underlines and an outline/minimap sidebar.
+- **Import/export** — open/save local files (File System Access API) and download-as-file.
