@@ -5,17 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>docum/craft</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <input type="text" id="name">
-    <select id="mode">
-        <option value="txt">txt</option>
-        <option value="xml">xml</option>
-        <option value="json">json</option>
-        <option value="html">html</option>
-        <option value="md">md</option>
-    </select>
+    <header class="toolbar">
+        <h1>docum<small>/craft</small></h1>
+        <input type="text" id="name" placeholder="document name" title="Unique document name">
+        <select id="mode" title="Document type">
+            <option value="txt">txt</option>
+            <option value="xml">xml</option>
+            <option value="json">json</option>
+            <option value="html">html</option>
+            <option value="md">md</option>
+        </select>
+        <div class="toolbar-actions">
+            <button id="btn-new" class="secondary" type="button">New</button>
+            <button id="btn-save" type="button">Save</button>
+            <button id="btn-delete" class="danger" type="button">Delete</button>
+            <button id="btn-view" class="toggle" type="button">Preview</button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Documents</h2>
+            <ul id="doc-list"></ul>
+        </aside>
+
+        <main class="main">
+            <div id="editor-view" class="editor-view">
+                <div id="gutter" class="gutter" aria-hidden="true">
+                    <div id="gutter-lines"></div>
+                </div>
+                <div class="editor-stack">
+                    <pre id="highlight" aria-hidden="true"><code id="highlight-code"></code></pre>
+                    <textarea id="editor" spellcheck="false" wrap="off" aria-label="Document editor"></textarea>
+                </div>
+            </div>
+            <div id="preview-view" class="preview-view" hidden></div>
+        </main>
+    </div>
+
+    <footer id="statusbar" class="statusbar"></footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/semantic.js"></script>
+    <script src="js/preview.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
